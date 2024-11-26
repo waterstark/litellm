@@ -538,6 +538,7 @@ openai_compatible_endpoints: List = [
     "app.empower.dev/api/v1",
     "inference.friendli.ai/v1",
     "api.sambanova.ai/v1",
+    "https://api.aimlapi.com/v2",
     "api.x.ai/v1",
 ]
 
@@ -549,6 +550,7 @@ openai_compatible_providers: List = [
     "nvidia_nim",
     "cerebras",
     "sambanova",
+    "aiml",
     "ai21_chat",
     "volcengine",
     "codestral",
@@ -828,6 +830,7 @@ class LlmProviders(str, Enum):
     TEXT_COMPLETION_CODESTRAL = "text-completion-codestral"
     DEEPSEEK = "deepseek"
     SAMBANOVA = "sambanova"
+    AIML = "aiml"
     MARITALK = "maritalk"
     VOYAGE = "voyage"
     CLOUDFLARE = "cloudflare"
@@ -1107,6 +1110,7 @@ nvidiaNimEmbeddingConfig = NvidiaNimEmbeddingConfig()
 
 from .llms.cerebras.chat import CerebrasConfig
 from .llms.sambanova.chat import SambanovaConfig
+from .llms.aiml.aiml import AIMLConfig
 from .llms.AI21.chat import AI21ChatConfig
 from .llms.fireworks_ai.chat.fireworks_ai_transformation import FireworksAIConfig
 from .llms.fireworks_ai.embed.fireworks_ai_transformation import (
